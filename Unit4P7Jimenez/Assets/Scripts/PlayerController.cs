@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Powerup"))
+        if (other.CompareTag("Powerup"))
         {
             hasPowerup = true;
             currentPowerUp = other.gameObject.GetComponent<Powerup>().powerUpType;
-            powerUpIndicator.SetActive(true)
+            powerUpIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
-            
+
             if(powerupCountdown != null)
             {
                 StopCoroutine(powerupCountdown);
@@ -60,13 +60,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Enemy") && currentPowerUp == PowerUpType.Pushback)
+        if (collision.gameObject.CompareTag("Enemy") && currentPowerUp == PowerUpType.Pushback)
         {
             Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
 
             enemyRigidbody.AddForce(awayFromPlayer * powerUpStrength, ForceMode.Impulse);
-            Debug.Log("Player collided with: " + collision.gameObject.name + " with powerup set to " + currentPowerUp.ToString());
-        }
+        }    Debug.Log("Player collided with: " + collision.gameObject.name + " with powerup set to " + currentPowerUp.ToString());
     }
 }
