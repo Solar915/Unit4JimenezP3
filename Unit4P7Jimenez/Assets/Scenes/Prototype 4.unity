@@ -214,9 +214,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1742899641471652, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4428908044626120, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4428908044626120, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
       propertyPath: m_LocalScale.x
@@ -305,7 +309,10 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1167174658514193293, guid: 34c41852edd4919449fe862aa79fd785, type: 3}
   - {fileID: 1167174658514193293, guid: 9418646b248608145a3dc1b4842d552a, type: 3}
-  powerupPrefab: {fileID: 7500706032554565142, guid: 47f6d1c01ba0dad488bfb9ad4ecf983a, type: 3}
+  powerupPrefabs:
+  - {fileID: 7500706032554565142, guid: 47f6d1c01ba0dad488bfb9ad4ecf983a, type: 3}
+  - {fileID: 7500706032554565142, guid: 289c9c691646d744cb547dc57964ca11, type: 3}
+  - {fileID: 7500706032554565142, guid: 289c9c691646d744cb547dc57964ca11, type: 3}
   enemyCount: 0
   waveNumber: 1
 --- !u!4 &837166958
@@ -321,7 +328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211016355
 GameObject:
@@ -716,6 +723,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cea178306bfe1846a9b4e0ff7ef1451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPowerUp: 2
+  rocketPrefab: {fileID: 2701417272331980891, guid: d8a32815c8433c641879c7092868d2b5, type: 3}
+  hangTime: 0
+  smashSpeed: 0
+  explosionForce: 0
+  explosionRadius: 0
   speed: 2
   hasPowerup: 0
   powerUpIndicator: {fileID: 374764138}
