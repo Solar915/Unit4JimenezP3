@@ -14,9 +14,10 @@ public class PlayerControllerX : MonoBehaviour
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
-    float turbosboost = 10f;
+    float turboboost = 10f;
 
-    public ParticleSystem turboSmoke;
+    public ParticleSystem turbosSmoke;
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -32,8 +33,8 @@ public class PlayerControllerX : MonoBehaviour
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
 
-        if(verticalInput.GetKeyDown(KeyCode.Space))
-        playerRb.AddForce(focalPoint, transform, forward * turboboost, ForceMode.Impulse);
+        if(Input.GetKeyDown(KeyCode.Space))
+        playerRb.AddForce(focalPoint.transform.forward * turboboost, ForceMode.Impulse);
         turbosSmoke.Play();
 
     }
